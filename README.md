@@ -1,6 +1,7 @@
 # Virtual Garden 🌱
 
-**Virtual Garden** is a smart gardening assistant that allows users to manage virtual plants, track watering schedules, and receive personalized plant care tips. It integrates 3D models for a more immersive garden simulation experience.
+**Virtual Herbal Garden** is a dynamic website that offers detailed information about a variety of plants, allowing users to explore and interact with them in a virtual space. Users can move, zoom in, and examine plants closely to better understand their characteristics. The platform serves as an engaging educational tool, helping users gain valuable knowledge about plant species and their care through an immersive digital experience.
+
 
 ---
 
