@@ -5,6 +5,34 @@
 
 ---
 
+## 🚀 How to Use
+
+Follow these steps to explore the Virtual Garden project:
+
+1. **Visit the Website**  
+   Access the live site hosted via GitHub Pages:  
+   👉 [https://hiten2404.github.io/Virtual-Graden/](https://hiten2404.github.io/Virtual-Graden/)
+
+2. **Explore Plants**  
+   - Browse through the homepage to view featured plants.
+   - Click on plant cards to get more detailed information.
+   - Interact with 3D plant models (hosted externally via Google Drive).
+
+3. **Navigation**  
+   - Use the navigation bar to access pages like About, Contact, and specific plant info pages.
+
+4. **Learn More**  
+   Visit pages like `plant_info.html` or explore individual plant pages in the `plants/` folder to get additional details.
+
+⚠️ Note: Backend functionality using PHP (`getPlantInfo.php`) requires separate hosting and may not function on GitHub Pages.
+
+📦 3D models are hosted externally due to size limits. You can download them here:  
+🔗 [Google Drive - Plant Models](https://drive.google.com/drive/folders/1UGxxTRcnX101zQKPV7DkgkC5uEohHiRK?usp=sharing)
+    After downloading, place the files in the `/models` directory inside the project.
+
+
+---
+
 ## 🚀 Features
 - Explore lifelike **3D models** of herbs like Neem, Tulsi, Ashwagandha, and more
 - Learn about each plant's **medicinal uses**, benefits, and cultural relevance
@@ -18,16 +46,6 @@
 - **Frontend**: HTML, CSS, JavaScript
 - **3D Models**: Integrated from Google Poly/Sketchfab
 - **Hosting**: GitHub Pages / Netlify (as applicable)
-
----
-
-## 🔗 3D Model Files
-
-> 📦 Due to GitHub's file size limit, 3D assets are stored externally.
-
-📁 [Google Drive – 3D Models Folder](https://drive.google.com/drive/folders/1UGxxTRcnX101zQKPV7DkgkC5uEohHiRK?usp=sharing)
-
-After downloading, place the files in the `/models` directory inside the project.
 
 ---
 
