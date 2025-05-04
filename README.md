@@ -49,9 +49,11 @@ Follow these steps to explore the Virtual Garden project:
 
 ---
 
-## 🧠 Project Team
-- Hiten Parmar  
-- Diya Sonera
+## 👨‍👩‍👧‍👦 Team Members
+
+- **Hiten Parmar** – [@Hiten2404](https://github.com/Hiten2404)  
+- **Diya Sonera** – [@git-diya](https://github.com/git-diya)
+
 
 ---
 
