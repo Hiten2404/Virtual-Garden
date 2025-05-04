@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore 3D Plants - Virtual Garden</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: #1a1a1a;
+            margin-bottom: 100px;
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        header {
+            background: #065f46;
+            padding: 2rem 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #065f46;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .plant-viewer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 1.5rem;
+        }
+
+        .model-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .model-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 1rem;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            overflow: hidden;
+        }
+
+        .info-button {
+            width: 100%;
+            padding: 0.875rem;
+            background: #059669;
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .info-button:hover {
+            background: #047857;
+        }
+
+        .quiz-section {
+            margin-top: 4rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            max-width: 800px;
+                    margin: 2rem auto;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #065f46;
+        }
+
+        .quiz-section p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+
+        #quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        #quiz-options button {
+            padding: 1rem;
+            border-radius: 1rem;
+            border: none;
+            background: #059669;
+            color: white;
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #quiz-options button:hover {
+            background: #047857;
+        }
+
+        #quiz-result {
+            margin-top: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        footer {
+            background: #065f46;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            main {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .quiz-section {
+                padding: 1.5rem;
+                margin: 2rem 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        #plant-info {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        #plant-info h3 {
+            color: #065f46;
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        #plant-info p {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+
+        #plant-info strong {
+            color: #059669;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore 3D Plants - Virtual Garden</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="ayush.html">Explore 3D Plants</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Explore the Plants in 3D</h2>
+        <div class="plant-viewer">
+            <!-- Neem Plant -->
+            <div class="model-container">
+                <model-viewer src="models/neem.glb" alt="Neem Plant" auto-rotate camera-controls></model-viewer>
+<button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Neem Info</button>
+            </div>
+
+            <!-- Tulsi Plant -->
+            <div class="model-container">
+                <model-viewer src="models/tulsi.glb" alt="Tulsi Plant" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/tulsi.html'">Click for Tulsi Info</button>
+            </div>
+
+            <!-- Additional Plants -->
+            <div class="model-container">
+                <model-viewer src="models/rose_flower.glb" alt="Red Rose" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/rose.html'">Click for Red Rose Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/ginger_root.glb" alt="Ginger Root" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Ginger Root Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/aswagandha.glb" alt="Ashwagandha" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Ashwagandha Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/aloe_vera_plant.glb" alt="Aloe Vera Plant" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/aloevera.html'">Click for Aloe Vera Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/thyme.glb" alt="Thyme" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Thyme Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/rosemary.glb" alt="Rosemary" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Rosemary Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/lavender.glb" alt="Lavender" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Lavender Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/clove.glb" alt="Clove" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Clove Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/garlic.glb" alt="Garlic" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Garlic Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/marigold_plant.glb" alt="Marigold" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Marigold Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/moringa.glb" alt="Moringa" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">onclick="fetchPlantInfo('Moringa')">Click for Moringa Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/lotus.glb" alt="Lotus" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">onclick="fetchPlantInfo('Lotus')">Click for Lotus Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/orchid.glb" alt="Orchid" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">onclick="fetchPlantInfo('Orchid')">Click for Orchid Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/habiscus.glb" alt="Hibiscus" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="fetchPlantInfo('Hibiscus')">Click for Hibiscus Info</button>
+            </div>
+
+            <div class="model-container">
+                <model-viewer src="models/orange.glb" alt="Calendula" auto-rotate camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='plants/neem.html'">Click for Calendula Info</button>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>🌿 Plant Quiz</h2>
+            <p id="quiz-question">Loading question...</p>
+            <div id="quiz-options"></div>
+            <p id="quiz-result"></p>
+        </div>
+
+        <!-- Info Display Section -->
+        <div id="plant-info" style="display:none; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <h3 id="plant-name"></h3>
+            <p><strong>Location:</strong> <span id="plant-location"></span></p>
+            <p><strong>Global Spread:</strong> <span id="plant-spread"></span></p>
+            <p><strong>Preferred Climate:</strong> <span id="plant-climate"></span></p>
+            <p><strong>History:</strong> <span id="plant-history"></span></p>
+            <p><strong>Medical Uses:</strong> <span id="plant-uses"></span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Virtual Garden. All rights reserved.</p>
+    </footer>
+
+    <!-- Import Model-Viewer Script -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <script type="text/javascript">
+        // Fade-in effect when page is loaded
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        function fetchPlantInfo(plantName) {
+            fetch(`getPlantInfo.php?name=${encodeURIComponent(plantName)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        // Store plant info in localStorage
+                        localStorage.setItem("plantInfo", JSON.stringify(data));
+
+                        // Redirect to the new page
+                        window.location.href = "plant_info.html";
+                    }
+                })
+                .catch(error => console.error("Error fetching data:", error));
+        }
+
+        const quiz = [
+            {
+                question: "🌱 Which plant is best known for purifying air indoors?",
+                options: ["Tulsi", "Aloe vera", "Rose"],
+                answer: "Aloe vera"
+            },
+            {
+                question: "💊 Which plant is used in Ayurvedic medicine for immunity?",
+                options: ["Ashwagandha", "Marigold", "Rosemary"],
+                answer: "Ashwagandha"
+            },
+            {
+                question: "🌼 Which plant is commonly used for skin burns?",
+                options: ["Ginger", "Aloe vera", "Neem"],
+                answer: "Aloe vera"
+            }
+        ];
+
+        let currentQuiz = 0;
+
+        function loadQuiz() {
+            const q = quiz[currentQuiz];
+            document.getElementById("quiz-question").textContent = q.question;
+            const optionsDiv = document.getElementById("quiz-options");
+            optionsDiv.innerHTML = "";
+
+            q.options.forEach(option => {
+                const btn = document.createElement("button");
+                btn.textContent = option;
+                btn.onclick = () => checkAnswer(option);
+                optionsDiv.appendChild(btn);
+            });
+
+            document.getElementById("quiz-result").textContent = "";
+        }
+
+        function checkAnswer(selected) {
+            const correct = quiz[currentQuiz].answer;
+            const result = document.getElementById("quiz-result");
+
+            if (selected === correct) {
+                result.textContent = "✅ Correct!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "❌ Incorrect. Correct answer is: " + correct;
+                result.style.color = "crimson";
+            }
+
+            setTimeout(() => {
+                currentQuiz = (currentQuiz + 1) % quiz.length;
+                loadQuiz();
+            }, 2500); // Wait before loading next
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            loadQuiz(); // Start quiz when page loads
+        });
+    </script>
+</body>
+</html>
