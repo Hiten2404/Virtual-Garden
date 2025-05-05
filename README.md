@@ -64,7 +64,7 @@ Home Page :
 
 Models :
 
-![Explore the Plants](https://github.com/user-attachments/assets/8b3f9ba3-92f6-4eb7-9167-486485725287)
+![Models](https://github.com/user-attachments/assets/04307210-2235-44ac-828d-cb242d3dc2c8)
 
 About Us :
 
