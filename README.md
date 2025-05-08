@@ -26,9 +26,9 @@ Follow these steps to explore the Virtual Garden project:
 
 ⚠️ Note: Backend functionality using PHP (`getPlantInfo.php`) requires separate hosting and may not function on GitHub Pages.
 
-📦 3D models are hosted externally due to size limits. You can download them here:  
-🔗 [Google Drive - Plant Models](https://drive.google.com/drive/folders/1UGxxTRcnX101zQKPV7DkgkC5uEohHiRK?usp=sharing)
-    After downloading, place the files in the `/models` directory inside the project.
+📦 3D Models
+🧱 The required 3D plant models are now included within the project repository under the /models directory. No external download is needed.
+💡 These models have been optimized and compressed to ensure smooth performance and better compatibility with GitHub hosting limits.
 
 
 ---
