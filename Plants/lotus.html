@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lotus (Nelumbo nucifera)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1fdf6;
+      margin: 0;
+      padding: 20px;
+      color: #2d4436;
+    }
+    h1 {
+      text-align: center;
+      color: #2c5f2d;
+      margin-bottom: 20px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .left-column {
+      flex: 1;
+      min-width: 300px;
+      margin-right: 30px;
+    }
+    .right-column {
+      flex: 1;
+      min-width: 280px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .plant-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .description {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #2c5f2d;
+      margin: 30px 0 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      color: #2c5f2d;
+      margin-top: 0;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .left-column, .right-column {
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lotus (Nelumbo nucifera)</h1>
+
+  <div class="container">
+    <div class="left-column">
+      <img src="images/lotus.jpg" alt="Lotus Flower" class="plant-image">
+
+      <div class="description">
+        The Lotus is a symbol of purity, enlightenment, and rebirth across many cultures. This aquatic perennial plant is native to Asia and Australia and is revered in religions like Hinduism and Buddhism. Its stunning pink or white flowers bloom above water and are known for their self-cleaning properties.
+      </div>
+
+      <div class="section-title">Plant Attributes & Uses</div>
+      <div class="grid">
+        <div class="card">
+          <h3>Scientific Classification</h3>
+          <p>
+            <strong>Family:</strong> Nelumbonaceae<br>
+            <strong>Genus:</strong> Nelumbo<br>
+            <strong>Species:</strong> N. nucifera
+          </p>
+        </div>
+        <div class="card">
+          <h3>Global Spread</h3>
+          <p>Found in India, China, Japan, Southeast Asia, and Australia.</p>
+        </div>
+        <div class="card">
+          <h3>Preferred Climate</h3>
+          <p>Thrives in tropical and subtropical climates, in shallow ponds and lakes with full sun exposure.</p>
+        </div>
+        <div class="card">
+          <h3>Medicinal Uses</h3>
+          <p>Used in Ayurvedic and traditional Chinese medicine for treating diarrhea, inflammation, skin conditions, and as a calming agent.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <h2>Garden Information</h2>
+      <p><strong>Hardiness:</strong> USDA Zones 4–10</p>
+      <p><strong>Climate Zones:</strong> Tropical, Subtropical, Temperate</p>
+      <p><strong>Exposure:</strong> Full Sun</p>
+      <p><strong>Soil Type:</strong> Silty, clay-based pond soil (underwater)</p>
+      <p><strong>Water Needs:</strong> High — grows best submerged in water</p>
+    </div>
+  </div>
+
+</body>
+</html>
