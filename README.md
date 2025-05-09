@@ -11,7 +11,7 @@ Follow these steps to explore the Virtual Garden project:
 
 1. **Visit the Website**  
    Access the live site hosted via GitHub Pages:  
-   👉 [https://hiten2404.github.io/Virtual-Graden/](https://hiten2404.github.io/Virtual-Garden/)
+   👉 [VIRTUAL GARDEN](https://virtual-garden-project.github.io/Virtual-Garden/)
 
 2. **Explore Plants**  
    - Browse through the homepage to view featured plants.
