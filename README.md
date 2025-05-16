@@ -60,7 +60,7 @@ Follow these steps to explore the Virtual Garden project:
 ## 📸 Screenshots
 Home Page :
 
-![Home Page](https://github.com/user-attachments/assets/08ab6135-b53a-45a3-928e-e05a39d9af55)
+![Home Page](https://github.com/user-attachments/assets/900b2605-d344-4a7d-ad32-b34538e83c55)
 
 Models :
 
