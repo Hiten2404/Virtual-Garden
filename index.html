@@ -191,6 +191,14 @@
       font-weight: 600;
     }
     #Footer a:hover { color: #fff176; }
+    .hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
     @keyframes fadeInUp {
       to { opacity: 1; transform: translateY(0); }
     }
@@ -210,6 +218,7 @@
         background-repeat: no-repeat;
         */
       }
+      
       .logo { font-size: 1.4rem; gap: 4px; }
       .logo i { font-size: 1.4rem; }
       .menu-toggle {
@@ -251,19 +260,31 @@
         justify-content: center;
         padding-top: 1px;
       }
-      .hero-text {
-        width: 100%;
-        z-index: 1;
-        padding: 0 1rem;
-        max-width: 100vw;
-        margin: 0 auto;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-        animation-delay: 0.5s;
-        position: relative;
-        background: none;
-      }
+      .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0;
+  }
+  .lottie-bg {
+    position: static;
+ width: 100%;
+        height: 234px;
+        left: 0;
+        top: 0;
+        margin-bottom: 0;
+        z-index: 0;
+  }
+  .hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 100vw;
+    width: 100%;
+        padding: 0px 1rem 0px 1rem;    margin: 0 auto;
+    background: none;
+    text-align: center;
+  }
     }
   </style>
 </head>
@@ -283,7 +304,8 @@
     </nav>
   </header>
 
-  <section class="hero" id="hero" data-aos="fade-up">
+<section class="hero" id="hero" data-aos="fade-up">
+  <div class="hero-inner">
     <div class="lottie-bg">
       <lottie-player src="https://lottie.host/042d425d-9e0c-4d61-a24f-96b9ed82535f/iNfIxmegOW.json"
         background="transparent" speed="2" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
@@ -293,7 +315,9 @@
       <p>"Hundreds of Ayurvedic herbs for your wellness. From sacred Tulsi to potent Ashwagandha—embrace nature’s healing power!"</p>
       <a href="ayush.html"><button class="cta">View 3D models →</button></a>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <section class="about-ayurveda" id="about">
     <div class="container">
