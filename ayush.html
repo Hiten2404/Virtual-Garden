@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Use Poppins for a modern, clean look -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,13 +18,14 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    height: 100vh; 
-}
-       
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
         body {
             font-family: 'Nunito', sans-serif;
             background: linear-gradient(135deg, #f9faf8 0%, #e0f2ee 100%);
@@ -37,51 +39,62 @@
             opacity: 1;
         }
 
-      header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-  background: linear-gradient(to right, #fff, #e0f7e9);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  animation: slideDown 0.3s;
-}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            background: linear-gradient(to right, #fff, #e0f7e9);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            animation: slideDown 0.3s;
+        }
 
         .header-content {
             display: flex;
             align-items: center;
             gap: 8px;
         }
+
         .logo {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-    font-size: 20px;
-    font-weight: bold;
-}
-.logo-text {
-  background: linear-gradient(90deg, #3a6b4b 0%, #6bbf59 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-.logo i {
-  color: #4CAF50;
-  font-size: 1.3rem;
-  display: inline-block;
-  transition: transform 0.2s ease-in-out;
-}
-.logo:hover i {
-  transform: rotate(-18deg) scale(1.18);
-  color: #6bbf59;
-}
-.brand-name { color: #2E7D32; }
-.brand-name .highlight { color: #66BB6A; }
-     .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            background: linear-gradient(90deg, #3a6b4b 0%, #6bbf59 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo i {
+            color: #4CAF50;
+            font-size: 1.3rem;
+            display: inline-block;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .logo:hover i {
+            transform: rotate(-18deg) scale(1.18);
+            color: #6bbf59;
+        }
+
+        .brand-name {
+            color: #2E7D32;
+        }
+
+        .brand-name .highlight {
+            color: #66BB6A;
+        }
+
+        .logo-title {
             font-family: 'Poppins', Arial, sans-serif;
             font-weight: 700;
             font-size: 2.1rem;
@@ -97,122 +110,165 @@
             align-items: center;
             gap: 0.5rem;
         }
-nav a {
-     position: relative;
-    text-decoration: none;
-    color: #25362b;
-    font-weight: 600;
-    padding: 7px 27px;
-    transition: color 0.3s;
-}
 
-nav a i {
-  margin-right: 6px;
-  color: #4CAF50;
-  transition: transform 0.3s;
-}
+        nav a {
+            position: relative;
+            text-decoration: none;
+            color: #25362b;
+            font-weight: 600;
+            padding: 7px 27px;
+            transition: color 0.3s;
+        }
 
-       nav a:hover i {
-  transform: scale(1.2) rotate(-10deg);
-}
+        nav a i {
+            margin-right: 6px;
+            color: #4CAF50;
+            transition: transform 0.3s;
+        }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0%;
-  background-color: #6bbf59;
-  transition: width 0.3s;
-}
+        nav a:hover i {
+            transform: scale(1.2) rotate(-10deg);
+        }
 
-nav a:hover {
-  color: #3a6b4b;
-}
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0%;
+            background-color: #6bbf59;
+            transition: width 0.3s;
+        }
 
-nav a:hover::after {
-  width: 100%;
-}
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  margin-left: 1rem;
-  color: #3a6b4b;
-  background: none;
-  border: none;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-}
+        nav a:hover {
+            color: #3a6b4b;
+        }
 
-.menu-toggle:focus { outline: none; box-shadow: none; }
+        nav a:hover::after {
+            width: 100%;
+        }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    height: 60px;
-  }
-  .logo { font-size: 1.4rem; gap: 4px; }
-  .logo i { font-size: 1.4rem; }
-  .menu-toggle {
-    display: block;
-    font-size: 1.6rem;
-    margin-top: -4px;
-  }
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(42,157,143,0.10);
-    border-radius: 1rem;
-    padding: 0.7rem 2rem;
-    z-index: 1000;
-    min-width: 140px;
-    animation: fadeInUp 0.3s;
-  }
-  nav.show { display: flex;
-        align-items: flex-start; }
-  nav a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0.6rem 0;
-    font-size: 1rem;
-    font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 700;
-    color: #3a6b4b;
-    border-bottom: 1px solid #e0f2ee;
-    margin: 0;
-    text-align: left;
-    background: none;
-    box-shadow: none;
-  }
-  nav a:last-child { border-bottom: none; }
-  nav a i {
-    font-size: 1.2rem;
-    color: #4CAF50;
-    min-width: 22px;
-    text-align: center;
-  }
-}
-@keyframes slideDown {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
-}
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            margin-left: 1rem;
+            color: #3a6b4b;
+            background: none;
+            border: none;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .menu-toggle:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                align-items: center;
+                padding: 0.5rem 1rem;
+                height: 60px;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+                gap: 4px;
+            }
+
+            .logo i {
+                font-size: 1.4rem;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 1.6rem;
+                margin-top: -4px;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: #fff;
+                box-shadow: 0 8px 24px rgba(42, 157, 143, 0.10);
+                border-radius: 1rem;
+                padding: 0.7rem 2rem;
+                z-index: 1000;
+                min-width: 140px;
+                animation: fadeInUp 0.3s;
+            }
+
+            nav.show {
+                display: flex;
+                align-items: flex-start;
+            }
+
+            nav a {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 0.6rem 0;
+                font-size: 1rem;
+                font-family: 'Poppins', Arial, sans-serif;
+                font-weight: 700;
+                color: #3a6b4b;
+                border-bottom: 1px solid #e0f2ee;
+                margin: 0;
+                text-align: left;
+                background: none;
+                box-shadow: none;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            nav a i {
+                font-size: 1.2rem;
+                color: #4CAF50;
+                min-width: 22px;
+                text-align: center;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0);}
-            50% { transform: translateY(-7px);}
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
         }
 
         .search-bar {
@@ -376,12 +432,13 @@ nav a:hover::after {
             text-align: center;
         }
 
-    
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -389,44 +446,45 @@ nav a:hover::after {
         }
 
         /* Add this at the end of your <style> block or in a new <style> tag */
-#Footer {
-    font-family: 'Nunito', sans-serif;
-    background-color: #3a6b4b;
-    color: white;
-    text-align: center;
-    padding: 20px; /* Increased vertical padding */
-    margin-top: 46px;
-}
+        #Footer {
+            font-family: 'Nunito', sans-serif;
+            background-color: #3a6b4b;
+            color: white;
+            text-align: center;
+            padding: 19px;
+            margin-top: 46px;
+        }
 
-#Footer p {font-size: 18px;
-    margin: 0px -8px 12px 2px;
-}
-    
-#Footer a {
-    color: #FFD700;
-    text-decoration: underline;
-    font-weight: 600;
-    transition: color 0.2s;
-}
-#Footer a:hover {
-    color: #fff176;
-}
+        #Footer a {
+            color: #FFD700;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        #Footer a:hover {
+            color: #fff176;
+        }
+
+        #Footer p {
+            margin: 0px 0px 0 15px;
+        }
     </style>
 </head>
+
 <body>
     <header>
-  <span class="logo">
-    <i class="fas fa-leaf"></i>
-    <span class="brand-name">Virtual <span class="highlight">Garden</span></span>
-  </span>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <nav id="navbar">
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="ayush.html"><i class="fas fa-cube"></i> 3D Plants</a>
-    <a href="about.html"><i class="fas fa-users"></i> About Us</a>
-    <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
-  </nav>
-</header>
+        <span class="logo">
+            <i class="fas fa-leaf"></i>
+            <span class="brand-name">Virtual <span class="highlight">Garden</span></span>
+        </span>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <nav id="navbar">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="ayush.html"><i class="fas fa-cube"></i> 3D Plants</a>
+            <a href="about.html"><i class="fas fa-users"></i> About Us</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+        </nav>
+    </header>
 
     <div class="search-bar">
         <input type="text" id="search-input" placeholder="Search for a plant...">
@@ -439,89 +497,107 @@ nav a:hover::after {
             <!-- Neem Plant -->
             <div class="model-container">
                 <model-viewer src="models/neem.glb" alt="Neem Plant" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/neem.html'">Click for Neem Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/neem.html'">Click for Neem
+                    Info</button>
             </div>
 
             <!-- Tulsi Plant -->
             <div class="model-container">
                 <model-viewer src="models/tulsi.glb" alt="Tulsi Plant" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/tulsi.html'">Click for Tulsi Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/tulsi.html'">Click for Tulsi
+                    Info</button>
             </div>
 
             <!-- Additional Plants -->
             <div class="model-container">
                 <model-viewer src="models/periwinkle.glb" alt="Peri Winkle" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/periwinkle.html'">Click for Peri Winkle Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/periwinkle.html'">Click for Peri
+                    Winkle Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/ginger_root.glb" alt="Ginger Root" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/ginger.html'">Click for Ginger Root Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/ginger.html'">Click for Ginger Root
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/ashwagandha.glb" alt="Ashwagandha" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/ashwagandha.html'">Click for Ashwagandha Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/ashwagandha.html'">Click for
+                    Ashwagandha Info</button>
             </div>
 
             <div class="model-container">
-                <model-viewer src="models/aloe_vera.glb" alt="Aloe Vera Plant" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/aloevera.html'">Click for Aloe Vera Info</button>
+                <model-viewer src="models/aloe_vera.glb" alt="Aloe Vera Plant" auto-rotate
+                    camera-controls></model-viewer>
+                <button class="info-button" onclick="window.location.href='Plants/aloevera.html'">Click for Aloe Vera
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/thyme.glb" alt="Thyme" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/thyme.html'">Click for Thyme Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/thyme.html'">Click for Thyme
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/rosemary.glb" alt="Rosemary" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/rosemary.html'">Click for Rosemary Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/rosemary.html'">Click for Rosemary
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/lavender.glb" alt="Lavender" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/lavender.html'">Click for Lavender Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/lavender.html'">Click for Lavender
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/clove.glb" alt="Clove" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/clove.html'">Click for Clove Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/clove.html'">Click for Clove
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/garlic.glb" alt="Garlic" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/garlic.html'">Click for Garlic Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/garlic.html'">Click for Garlic
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/marigold_plant.glb" alt="Marigold" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/marigold.html'">Click for Marigold Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/marigold.html'">Click for Marigold
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/moringa.glb" alt="Moringa" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/moringa.html'">Click for Moringa Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/moringa.html'">Click for Moringa
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/lotus.glb" alt="Lotus" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/lotus.html'">Click for Lotus Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/lotus.html'">Click for Lotus
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/orchid.glb" alt="Orchid" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/orchid.html'">Click for Orchid Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/orchid.html'">Click for Orchid
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/lemongrass.glb" alt="Lemon Grass" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/lemongrass.html'">Click for Lemongrass Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/lemongrass.html'">Click for Lemongrass
+                    Info</button>
             </div>
 
             <div class="model-container">
                 <model-viewer src="models/calendula.glb" alt="Calendula" auto-rotate camera-controls></model-viewer>
-                <button class="info-button" onclick="window.location.href='Plants/calendula.html'">Click for Calendula Info</button>
+                <button class="info-button" onclick="window.location.href='Plants/calendula.html'">Click for Calendula
+                    Info</button>
             </div>
         </div>
 
@@ -533,7 +609,8 @@ nav a:hover::after {
         </div>
 
         <!-- Info Display Section -->
-        <div id="plant-info" style="display:none; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <div id="plant-info"
+            style="display:none; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
             <h3 id="plant-name"></h3>
             <p><strong>Location:</strong> <span id="plant-location"></span></p>
             <p><strong>Global Spread:</strong> <span id="plant-spread"></span></p>
@@ -672,9 +749,9 @@ nav a:hover::after {
         });
 
         // Change header shadow on scroll
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
-            if(window.scrollY > 10) {
+            if (window.scrollY > 10) {
                 header.style.boxShadow = '0 4px 16px rgba(76,175,80,0.10)';
             } else {
                 header.style.boxShadow = '0 2px 6px rgba(0,0,0,0.05)';
@@ -682,4 +759,5 @@ nav a:hover::after {
         });
     </script>
 </body>
+
 </html>
