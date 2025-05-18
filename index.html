@@ -14,38 +14,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; }
-    html, body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100vw;
       overflow-x: hidden;
     }
+
     body {
       font-family: 'Nunito', sans-serif;
       background-color: #fff;
       color: #25362b;
       transition: background-color 0.3s, color 0.3s;
     }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      padding: 16px 33px 17px 10px;
       background: linear-gradient(to right, #fff, #e0f7e9);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       position: sticky;
       top: 0;
       z-index: 999;
       animation: slideDown 0.3s;
     }
+
     .logo {
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 1.3rem;
+      font-size: 20px;
       font-weight: bold;
     }
+
     .logo-text {
       background: linear-gradient(90deg, #3a6b4b 0%, #6bbf59 100%);
       -webkit-background-clip: text;
@@ -53,42 +61,65 @@
       background-clip: text;
       color: transparent;
     }
+
     .logo i {
       color: #4CAF50;
       font-size: 1.3rem;
       display: inline-block;
-  transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
     }
+
     .logo:hover i {
       transform: rotate(-18deg) scale(1.18);
       color: #6bbf59;
     }
-    .brand-name { color: #2E7D32; }
-    .brand-name .highlight { color: #66BB6A; }
+
+    .brand-name {
+      color: #2E7D32;
+    }
+
+    .brand-name .highlight {
+      color: #66BB6A;
+    }
+
     nav a {
       position: relative;
       text-decoration: none;
       color: #25362b;
       font-weight: 600;
-      padding: 7px 22px;
+      padding: 7px 27px;
       transition: color 0.3s;
     }
+
     nav a i {
       margin-right: 6px;
       color: #4CAF50;
       transition: transform 0.3s;
     }
-    nav a:hover i { transform: scale(1.2) rotate(-10deg); }
+
+    nav a:hover i {
+      transform: scale(1.2) rotate(-10deg);
+    }
+
     nav a::after {
       content: "";
       position: absolute;
-      left: 0; bottom: 0;
-      height: 2px; width: 0%;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0%;
       background-color: #6bbf59;
       transition: width 0.3s;
     }
-    nav a:hover { color: #3a6b4b; }
-    nav a:hover::after { width: 100%; }
+
+    nav a:hover {
+      color: #3a6b4b;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
     .menu-toggle {
       display: none;
       font-size: 2rem;
@@ -100,7 +131,12 @@
       outline: none;
       -webkit-tap-highlight-color: transparent;
     }
-    .menu-toggle:focus { outline: none; box-shadow: none; }
+
+    .menu-toggle:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
     .hero {
       width: 100%;
       height: calc(100vw / 2);
@@ -109,29 +145,43 @@
       margin: 0;
       padding: 0;
     }
-    .hero-text {
-         position: relative;
-    z-index: 7;
-    max-width: 44%;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-    padding-block: 5%;
-    padding-left: 106px;
-    }
-    .lottie-bg {
-  position: absolute;
-  top: 0;
-  left: 101px;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
 
-    .hero h1 { font-size: 40px; font-weight: bold; color: #000; }
-    .hero h1 span { color: #FFD700; }
-    .hero p { font-size: 18px; color: #000; }
+    .hero-text {
+      position: relative;
+      z-index: 7;
+      max-width: 44%;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+      padding-block: 5%;
+      padding-left: 106px;
+    }
+
+    .lottie-bg {
+      position: absolute;
+      top: 0;
+      left: 101px;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .hero h1 span {
+      color: #FFD700;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #000;
+    }
+
     .cta {
       background-color: #FFD700;
       color: #333;
@@ -143,7 +193,12 @@
       margin-top: 10px;
       transition: transform 0.3s, background-color 0.3s;
     }
-    .cta:hover { transform: scale(1.05); background-color: #FFC107; }
+
+    .cta:hover {
+      transform: scale(1.05);
+      background-color: #FFC107;
+    }
+
     .container {
       width: 90%;
       margin: auto;
@@ -154,6 +209,7 @@
       gap: 1rem;
       text-align: center;
     }
+
     .content {
       display: flex;
       align-items: center;
@@ -164,62 +220,102 @@
       transform: translateY(20px);
       animation: fadeInUp 1s forwards;
     }
-    .reverse { flex-direction: row-reverse; }
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
     img {
       width: 40%;
       max-width: 400px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    .text { width: 55%; }
-    h2 { color: #3a6b4b; font-size: 28px; margin-bottom: 10px; }
+
+    .text {
+      width: 55%;
+    }
+
+    h2 {
+      color: #3a6b4b;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
     .benefits-list li {
       color: #4e5d52;
       font-size: 18px;
       line-height: 1.6;
     }
+
     #Footer {
-  font-family: 'Nunito', sans-serif;
-  background-color: #3a6b4b;
-  color: white;
-  text-align: center;
-     padding: 19px;
-    margin-top: 46px;
-}
-#Footer a {
-  color: #FFD700;
-  text-decoration: underline;
-  font-weight: 600;
-}
-#Footer a:hover {
-  color: #fff176;
-}
-#Footer p {
-  margin: 10px 0;
-}
+      font-family: 'Nunito', sans-serif;
+      background-color: #3a6b4b;
+      color: white;
+      text-align: center;
+      padding: 19px;
+      margin-top: 46px;
+    }
+
     #Footer a {
       color: #FFD700;
       text-decoration: underline;
       font-weight: 600;
     }
-    #Footer p {
-    margin: 1px 0;}
-    #Footer a:hover { color: #fff176; }
-    .hero-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 1rem;
-  flex-wrap: wrap;
-}
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
+
+    #Footer a:hover {
+      color: #fff176;
     }
+
+    #Footer p {
+      margin: 10px 0;
+    }
+
+    #Footer a {
+      color: #FFD700;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    #Footer p {
+      margin: 1px 0;
+    }
+
+    #Footer a:hover {
+      color: #fff176;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 768px) {
-      .content { flex-direction: column; text-align: center; }
-      .content img, .text { width: 100% !important; }
-      .text { padding: 0 1rem; }
+      .content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .content img,
+      .text {
+        width: 100% !important;
+      }
+
+      .text {
+        padding: 0 1rem;
+      }
+
       header {
         flex-direction: row;
         align-items: center;
@@ -232,14 +328,22 @@
         background-repeat: no-repeat;
         */
       }
-      
-      .logo { font-size: 1.4rem; gap: 4px; }
-      .logo i { font-size: 1.4rem; }
+
+      .logo {
+        font-size: 1.4rem;
+        gap: 4px;
+      }
+
+      .logo i {
+        font-size: 1.4rem;
+      }
+
       .menu-toggle {
         display: block;
         font-size: 1.6rem;
         margin-top: 4px;
       }
+
       nav {
         display: none;
         flex-direction: column;
@@ -247,14 +351,18 @@
         top: 70px;
         right: 20px;
         background: #fff;
-        box-shadow: 0 8px 24px rgba(42,157,143,0.10);
+        box-shadow: 0 8px 24px rgba(42, 157, 143, 0.10);
         border-radius: 1rem;
         padding: 1rem 2rem;
         z-index: 1000;
         min-width: 180px;
         animation: fadeInUp 0.3s;
       }
-      nav.show { display: flex; }
+
+      nav.show {
+        display: flex;
+      }
+
       nav a {
         padding: 0.8rem 0;
         font-size: 1.1rem;
@@ -263,7 +371,11 @@
         margin: 0;
         text-align: left;
       }
-      nav a:last-child { border-bottom: none; }
+
+      nav a:last-child {
+        border-bottom: none;
+      }
+
       .hero {
         padding: 60px 0 0 0;
         height: auto;
@@ -274,31 +386,35 @@
         justify-content: center;
         padding-top: 1px;
       }
+
       .hero-inner {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0;
-    padding: 0;
-  }
-  .lottie-bg {
-    position: static;
- width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0;
+      }
+
+      .lottie-bg {
+        position: static;
+        width: 100%;
         height: 234px;
         left: 0;
         top: 0;
         margin-bottom: 0;
         z-index: 0;
-  }
-  .hero-text {
-    position: relative;
-    z-index: 1;
-    max-width: 100vw;
-    width: 100%;
-        padding: 0px 1rem 0px 1rem;    margin: 0 auto;
-    background: none;
-    text-align: center;
-  }
+      }
+
+      .hero-text {
+        position: relative;
+        z-index: 1;
+        max-width: 100vw;
+        width: 100%;
+        padding: 0px 1rem 0px 1rem;
+        margin: 0 auto;
+        background: none;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -318,19 +434,20 @@
     </nav>
   </header>
 
-<section class="hero" id="hero" data-aos="fade-up">
-  <div class="hero-inner">
-    <div class="lottie-bg">
-      <lottie-player src="https://lottie.host/042d425d-9e0c-4d61-a24f-96b9ed82535f/iNfIxmegOW.json"
-        background="transparent" speed="2" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+  <section class="hero" id="hero" data-aos="fade-up">
+    <div class="hero-inner">
+      <div class="lottie-bg">
+        <lottie-player src="https://lottie.host/042d425d-9e0c-4d61-a24f-96b9ed82535f/iNfIxmegOW.json"
+          background="transparent" speed="2" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+      </div>
+      <div class="hero-text">
+        <h1>"Revive your health with <span>Ayurveda 🌿</span>"</h1>
+        <p>"Hundreds of Ayurvedic herbs for your wellness. From sacred Tulsi to potent Ashwagandha—embrace nature’s
+          healing power!"</p>
+        <a href="ayush.html"><button class="cta">View 3D models →</button></a>
+      </div>
     </div>
-    <div class="hero-text">
-      <h1>"Revive your health with <span>Ayurveda 🌿</span>"</h1>
-      <p>"Hundreds of Ayurvedic herbs for your wellness. From sacred Tulsi to potent Ashwagandha—embrace nature’s healing power!"</p>
-      <a href="ayush.html"><button class="cta">View 3D models →</button></a>
-    </div>
-  </div>
-</section>
+  </section>
 
 
   <section class="about-ayurveda" id="about">
@@ -339,7 +456,8 @@
         <img src="images/ayurved.png" alt="What is Ayurveda?">
         <div class="text">
           <h2>What is Ayurveda?</h2>
-          <p>Ayurveda is an ancient system of medicine that originated in India over 5,000 years ago. It focuses on a natural and holistic approach to physical and mental well-being.</p>
+          <p>Ayurveda is an ancient system of medicine that originated in India over 5,000 years ago. It focuses on a
+            natural and holistic approach to physical and mental well-being.</p>
           <ul class="benefits-list">
             <li>Support the body in removing toxins and impurities</li>
             <li>Reduce symptoms</li>
@@ -358,7 +476,8 @@
         <img src="images/h2.jpg" alt="Herbal Plants">
         <div class="text">
           <h2>Herbal Plants</h2>
-          <p>Explore a wide variety of herbal plants that have been used for centuries in Ayurvedic medicine. Learn about their unique properties and how they can benefit your health.</p>
+          <p>Explore a wide variety of herbal plants that have been used for centuries in Ayurvedic medicine. Learn
+            about their unique properties and how they can benefit your health.</p>
         </div>
       </div>
     </div>
@@ -370,16 +489,17 @@
         <img src="images/herbal.jpg" alt="Benefits of Ayurveda">
         <div class="text">
           <h2>Benefits & Usages</h2>
-          <p>Ayurvedic herbs offer numerous health benefits, including boosting immunity, reducing stress, improving digestion, and promoting skin health. Discover how nature can heal you!</p>
+          <p>Ayurvedic herbs offer numerous health benefits, including boosting immunity, reducing stress, improving
+            digestion, and promoting skin health. Discover how nature can heal you!</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer id="Footer">
-  <p>&copy; 2024 Virtual Garden. All rights reserved.</p>
-  <p><a href="contact.html">Contact Us</a></p>
-</footer>
+    <p>&copy; 2024 Virtual Garden. All rights reserved.</p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -445,4 +565,5 @@
     });
   </script>
 </body>
+
 </html>
