@@ -60,11 +60,11 @@ Follow these steps to explore the Virtual Garden project:
 ## 📸 Screenshots
 Home Page :
 
-![Home Page](https://github.com/user-attachments/assets/900b2605-d344-4a7d-ad32-b34538e83c55)
+![Home Page](https://github.com/user-attachments/assets/bb9a537d-c161-43c4-a671-d9bead4263a7)
 
 Models :
 
-![Models](https://github.com/user-attachments/assets/43044e3d-5303-4792-a14c-a842b58ab982)
+![Models](https://github.com/user-attachments/assets/d4579e83-dc60-405e-a8fe-8e2673e04cde)
 
 Neem Info Page : 
 
@@ -72,7 +72,7 @@ Neem Info Page :
 
 About Us :
 
-![About Us](https://github.com/user-attachments/assets/fae2c173-a3ca-442e-9bfc-1a62f4e0336e)
+![About Us](https://github.com/user-attachments/assets/a9af564f-c898-41f3-96fd-ec6b98c7e8b7)
 
 
 ---
