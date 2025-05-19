@@ -16,7 +16,7 @@ Follow these steps to explore the Virtual Garden project:
 2. **Explore Plants**  
    - Browse through the homepage to view featured plants.
    - Click on plant cards to get more detailed information.
-   - Interact with 3D plant models (hosted externally via Google Drive).
+   - Interact with 3D plant models.
 
 3. **Navigation**  
    - Use the navigation bar to access pages like About, Contact, and specific plant info pages.
@@ -24,7 +24,6 @@ Follow these steps to explore the Virtual Garden project:
 4. **Learn More**  
    Visit pages like `plant_info.html` or explore individual plant pages in the `plants/` folder to get additional details.
 
-⚠️ Note: Backend functionality using PHP (`getPlantInfo.php`) requires separate hosting and may not function on GitHub Pages.
 
 📦 3D Models
 🧱 The required 3D plant models are now included within the project repository under the /models directory. No external download is needed.
